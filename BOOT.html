@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Здесь можно сменить шрифт */
+            background-color: #f4f7fa; /* Цвет фона всей страницы */
+        }
+
+        .hero-section {
+            background-image: url('resources/tuur.jpg'); /* Замените на свой путь к изображению */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 300px 0; /* Измените паддинг для изменения размера секции */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section h1 {
+            font-size: 3rem; /* Размер шрифта заголовка */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 5px; /* Расстояние между буквами */
+        }
+
+        .hero-section p {
+            font-size: 1.25rem; /* Размер шрифта для текста */
+            font-weight: 700;
+        }
+
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px); /* Эффект при наведении на карточку */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card img {
+            border-radius: 16px; /* Радиус углов изображения */
+        }
+
+        .feature-block {
+            background-color: #ffffff;
+            padding: 50px 0; /* Паддинг внутри блока */
+            animation: fadeIn 1s ease-in-out; /* Эффект появления блока */
+        }
+
+        .feature-block h3 {
+            font-weight: 700;
+        }
+
+        .footer {
+            background-color: #212529; /* Цвет фона подвала */
+            color: white;
+            padding: 20px 0; /* Паддинг подвала */
+            text-align: center;
+        }
+
+        /* Анимация появления блоков при прокрутке */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Анимация кнопки при наведении */
+        .btn-primary {
+            transition: background-color 0.3s ease; /* Эффект при наведении на кнопку */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Цвет кнопки при наведении */
+        }
+
+        /* Анимация для отзывов */
+        .blockquote {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        .blockquote:nth-child(1) {
+            animation-delay: 0.2s; /* Задержка для первого отзыва */
+        }
+
+        .blockquote:nth-child(2) {
+            animation-delay: 0.4s; /* Задержка для второго отзыва */
+        }
+
+        .blockquote:nth-child(3) {
+            animation-delay: 0.6s; /* Задержка для третьего отзыва */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Главная</a> <!-- Измените текст и ссылку -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tours.html">Туры</a> <!-- Измените текст и ссылку -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">О нас</a> <!-- Измените текст и ссылку -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Контакты</a> <!-- Измените текст и ссылку -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главная секция -->
+    <div class="hero-section text-center">
+        <h1>Тур агенттигине кош келдиниз!</h1> <!-- Измените заголовок -->
+        <p>Биз сиздин эс алууга эң жакшы турларды тандоого жардам беребиз!</p> <!-- Измените описание -->
+    </div>
+
+   <!-- Блок 1: Популярные туры -->
+<div class="container py-5">
+    <h2 class="text-center">Белгилуу турлар</h2> <!-- Измените заголовок -->
+    <div class="row">
+        <!-- Карточка 1 -->
+        <div class="col-md-4">
+            <div class="card service-card">
+                <img src='resources/osh.jpeg' class="card-img-top" alt="Тур 1"> <!-- Замените на своё изображение -->
+                <div class="card-body">
+                    <h5 class="card-title">Ош шаарына тур</h5> <!-- Замените на название тура -->
+                    <p class="card-text">Ош шаарына мыкты тур! Экскурсиялар жана тамактануу кирет.</p> <!-- Замените описание -->
+                    <a href="tours.html" class="btn btn-primary">Толугураак</a> <!-- Ссылка на подробности тура -->
+                </div>
+            </div>
+        </div>
+        <!-- Карточка 2 -->
+        <div class="col-md-4">
+            <div class="card service-card">
+                <img src='resources/batkenn.jpg' class="card-img-top" alt="Тур 2"> <!-- Замените на своё изображение -->
+                <div class="card-body">
+                    <h5 class="card-title">Баткен областына  мыкты тур! Экскурсиялар жана тамактануу кирет.</h5> <!-- Замените на название тура -->
+                    <!-- Замените описание -->
+                    <a href="tours.html" class="btn btn-primary">Толугураак</a> <!-- Ссылка на подробности тура -->
+                </div>
+            </div>
+        </div>
+        <!-- Карточка 3 -->
+        <div class="col-md-4">
+            <div class="card service-card">
+                <img src='resources/kul.jpeg' class="card-img-top" alt="Тур 3"> <!-- Замените на своё изображение -->
+                <div class="card-body">
+                    <h5 class="card-title">Ыссык-Колго мыкты тур!</h5> <!-- Замените на название тура -->
+                    <p class="card-text">Экскурсиялар жана тамактануу кирет..</p> <!-- Замените описание -->
+                    <a href="tours.html" class="btn btn-primary">Подробнее</a> <!-- Ссылка на подробности тура -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <!-- Блок 2: Наши преимущества -->
+<div class="feature-block text-center">
+    <div class="container">
+        <h3>Эмне үчүн бизди тандаңыз?</h3> <!-- Заголовок -->
+        <div class="row">
+            <!-- Блок 1: Сапат -->
+            <div class="col-md-4">
+                <img src='resources/sapatt.png' class="img-fluid mb-3" style="max-width: 100px;" alt="Сапат" /> <!-- Изображение для первого преимущества с ограниченным размером -->
+                <h4>Сапат</h4>
+                <p>Биз мыкты сын-пикирлер менен далилденген турларды жана мейманканаларды гана сунуштайбыз.</p>
+            </div>
+            <!-- Блок 2: Жеткиликтүү баалар -->
+            <div class="col-md-4">
+                <img src='resources/money.png' class="img-fluid mb-3" style="max-width: 100px;" alt="Жеткиликтүү баалар" /> <!-- Изображение для второго преимущества с ограниченным размером -->
+                <h4>Жеткиликтүү баалар</h4>
+                <p>Биздин баалар сизди таң калтырат. Биз популярдуу багыттар боюнча арзандатууларды сунуштайбыз.</p>
+            </div>
+            <!-- Блок 3: Колдоо 24/7 -->
+            <div class="col-md-4">
+                <img src='resources/pod.png' class="img-fluid mb-3" style="max-width: 100px;" alt="Колдоо 24/7" /> <!-- Изображение для третьего преимущества с ограниченным размером -->
+                <h4>Колдоо 24/7</h4>
+                <p>Биздин команда ар дайым сизге жардам берүүгө даяр.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Блок 3: Призыв к действию с анимациями -->
+<div class="container py-5">
+    <h3 class="text-center mb-4" style="font-size: 2.5rem; color: #1e3d58; font-weight: bold; text-transform: uppercase;">Биз менен саякаттаныз​!</h2>
+    <p class="text-center mb-5" style="font-size: 1.1rem; color: #4f6d7a;">Жаңы горизонтторду ачыңыз, уникалдуу жерлерди изилдеңиз жана турларыбыздан ырахат алыңыз. Биз кызыктуу маршруттарды, сапаттуу кызматтарды жана тажрыйбалуу гиддерди сунуштайбыз. Бизге кошулуңуз жана саякатыңызды унутулгус кылыңыз!</p>
+    <div class="row text-center">
+        <!-- Круглое изображение 1 -->
+        <div class="col-md-4">
+            <div class="circle-img-wrapper mb-4">
+                <img src='resources/birr.jpg' alt="Экзотикалык турлар" class="img-fluid circle-img travel-img" />
+            </div>
+            
+        </div>
+        <!-- Круглое изображение 2 -->
+        <div class="col-md-4">
+            <div class="circle-img-wrapper mb-4">
+                <img src='resources/eki.jpg' alt="Маданий саякаттар" class="img-fluid circle-img travel-img" />
+            </div>
+           
+        </div>
+        <!-- Круглое изображение 3 -->
+        <div class="col-md-4">
+            <div class="circle-img-wrapper mb-4">
+                <img src='resources/uch.jpeg' alt="Табигый көркөмдүктөр" class="img-fluid circle-img travel-img" />
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Стили и анимации -->
+<style>
+    .circle-img-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 1s ease-in-out;
+    }
+
+    .circle-img {
+        width: 100%;
+        height: auto;
+        transition: transform 1s ease;
+    }
+
+   
+
+    .circle-img-wrapper:hover .circle-img {
+        transform: scale(1.1); /* Увеличение изображения при наведении */
+    }
+
+    .circle-img-wrapper:hover .circle-text {
+        color: #ff6f61; /* Изменение цвета текста */
+    }
+
+    .travel-img {
+        animation: fadeInUp 3s ease-out forwards;
+    }
+
+    /* Анимация для картинок */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<!-- CSS для анимаций и круглых изображений -->
+<style>
+    .circle-img-wrapper {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .circle-img-wrapper:hover {
+        transform: scale(1.1); /* Эффект увеличения изображения при наведении */
+    }
+
+    .circle-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .row h5 {
+        font-family: 'Roboto', sans-serif; /* Пример другого шрифта */
+        font-size: 1.2rem;
+        color: #333;
+    }
+</style>
+
+
+
+    <!-- Блок 3: Отзывы клиентов -->
+    <div class="container py-5">
+        <h2 class="text-center">Биздин кардарлардын сын-пикирлери</h2> <!-- Измените заголовок -->
+        <div class="row">
+            <!-- Каждый отзыв можно заменить, изменяя текст -->
+            <div class="col-md-4">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">"Кереметтүү туристтик агенттик! Баары жогорку деңгээлде уюштурулган. Мен үй-бүлөм менен Ош шаарында болдук, ал унутулгус болду!"</p>
+                    <footer class="blockquote-footer">                                                  </footer>
+                    <footer class="blockquote-footer">Билгисаяр болумунун мугалимдери</footer>
+                </blockquote>
+            </div>
+            <!-- Повторите для других отзывов -->
+            <div class="col-md-4">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">"Курбум менен сиздин турду сатып алып,өкүнбөдүк.Иштериңизге ийгилик,бизге унутулгус көз ирмемдерди тартууладыңыз"</p>
+                    <footer class="blockquote-footer">                                                  </footer>
+                    <footer class="blockquote-footer">Алина жана Жасмина</footer> <!-- Автор можно оставить пустым -->
+                </blockquote>
+            </div>
+            
+            <div class="col-md-4">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">"Турагенттик чын эле бардык күтүүлөрүбүздү актады! Биз Ошко тур тандап, өкүнбөдүк. Пакет толугу менен мыкты уюштурулган, бардык кызыктуу жайларды кыдырдык, жергиликтүү тамак-аштардан ырахат алдык жана маданият жөнүндө көп нерселерди билдик. Бардык адамдарга сунуштайм!"</p>
+                    <footer class="blockquote-footer">                                                  </footer>
+                    <footer class="blockquote-footer">Элина жана Улансын</footer> <!-- Авторду жашырууга же бош калтырып коюуга болот -->
+                </blockquote>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <div class="footer">
+        <p>&copy; 2024 Тур Агенттиги. Бардык укуктар корголгон.</p> <!-- Измените текст -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
